@@ -5,7 +5,7 @@
 - [x] [Exercise_3](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E7%AC%AC%E4%B8%89%E6%AC%A1%E4%BD%9C%E4%B8%9A.md):
       
 * L1: Make your English name move on the screen
-* L2: Paint something on the screen and make it rerote 
+* L2: Paint something on the screen and make it rotate 
 
 - [ ] [Exercise_4]()
 - [ ] [Exercise_5]()
