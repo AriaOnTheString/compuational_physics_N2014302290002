@@ -1,4 +1,3 @@
-import pylab as pl
 class uranium_decay:
     """
     Simulation of radioactive decay
@@ -39,12 +38,10 @@ class uranium_decay:
             self.n_uraniumD.append(tmpD)            
             self.t2.append(self.t2[i] + self.dt2)
     def show_results(self):
-        pl.plot(self.t, self.n_uraniumA, 'g', label='Number of nucleiA & B')
-        pl.plot(self.t, self.n_uraniumB, 'g')
-        pl.plot(self.t, self.n_uraniumC, 'b', label='Number of nucleiC & D')
-        pl.plot(self.t, self.n_uraniumD, 'b')
-        pl.plot(self.t, self.n_uraniumE, 'r', label='Number of nucleiE & F')
-        pl.plot(self.t, self.n_uraniumF, 'r')
+        pl.plot(self.t1, self.n_uraniumA, 'g', label='Number of nucleiA & B')
+        pl.plot(self.t1, self.n_uraniumB, 'g')
+        pl.plot(self.t2, self.n_uraniumC, 'b', label='Number of nucleiC & D')
+        pl.plot(self.t2, self.n_uraniumD, 'b')
         pl.xlim(0.0, 3.0)
         pl.ylim(0.0, 100.0)
         pl.xlabel('time ($s$)')
@@ -53,7 +50,7 @@ class uranium_decay:
         pl.show()
     def store_results(self):
         myfile = open('nuclei_decay_data.txt', 'w')
-        for i in range(len(self.t)):
+        for i in range(len(self.t1)):
             print(self.t1[i],self.t2[i], self.n_uraniumA[i], self.n_uraniumB[i], file = myfile)
         myfile.close()
 a = uranium_decay()
