@@ -35,3 +35,19 @@ Then we can begin our progrem next!
 And the coordinate of the point I estimate is <img src="http://latex.codecogs.com/gif.latex?(x_l,0)" alt="" title="" />  
 - Consider the air drag with density correction:    
 ![](http://latex.codecogs.com/gif.latex?%5C%5C%20x_%7Bi&plus;1%7D%3Dx_i&plus;v_%7Bx%2Ci%7D%5CDelta%20t%20%5C%5C%20y_%7Bi&plus;1%7D%3Dy_i&plus;v_%7By%2Ci%7D%5CDelta%20t%20%5C%5C%20v_%7Bx%2Ci&plus;1%7D%3Dv_%7Bx%2Ci%7D-%5Cfrac%7BB%5E*vv_x%7D%7Bm%7D%5CDelta%20t%20%5C%5C%20v_%7By%2Ci&plus;1%7D%3Dv_%7By%2Ci%7D-%5Cfrac%7BB%5E*vv_y%7D%7Bm%7D%5CDelta%20t-g%5CDelta%20t)  
+
+1. I creat a class called flying_cannon in python to do the code and realize the functions I mentioned before. I set time step(delta t) as 0.01s and B/m as 4 * 10^-5/m first to draw the trajectory.  
+2. Contrast it with the condition without wind drag and draw the trajectory in one picture. 
+3. Use the adiabatic model of air density and Maxwell-Boltzmann statistics perspectively to calculate the trajectory.  
+4. Consider the variation of the ground temperature and do the calculation again.   
+
+##Plotting
+
+1. The trajectory of the cannon shell with wind drag:  
+![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(1).png)  
+
+2. The trajectory of the cannon shell without wind drag:  
+![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(2).png)  
+
+3. The contruction of the trajectorys with and without wind drag:  
+![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(4).png)  
