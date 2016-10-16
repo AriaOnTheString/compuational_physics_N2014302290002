@@ -21,3 +21,10 @@ Using the Newton's second law, we have the following equations:
 ![](http://latex.codecogs.com/gif.latex?F_%7Bdrag%7D%5E*%3De%5E%7B%5Cfrac%7B-y%7D%7By_0%7D%7DF_%7Bdrag%7D)  
 - Consider the air drag with density correction using adiabatic model:  
 ![](http://latex.codecogs.com/gif.latex?F_%7Bdrag%7D%5E*%3D%5Cleft%281-%5Cfrac%7Bay%7D%7BT_0%7D%20%5Cright%20%29%5E%7B%5Calpha%7DF_%7Bdrag%7D)  
+Then we can begin our progrem next!  
+###Realization  
+- Since the equations I solve now is two order ordinary differential equations, I shell use the Euler method as follows:  
+![](http://latex.codecogs.com/gif.latex?%5C%5C%20x_%7Bi&plus;1%7D%3Dx_i&plus;v_%7Bx%2Ci%7D%5CDelta%20t%20%5C%5C%20y_%7Bi&plus;1%7D%3Dy_i&plus;v_%7By%2Ci%7D%5CDelta%20t%20%5C%5C%20v_%7Bx%2Ci&plus;1%7D%3Dv_%7Bx%2Ci%7D-%5Cfrac%7BBvv_x%7D%7Bm%7D%5CDelta%20t%20%5C%5C%20v_%7By%2Ci&plus;1%7D%3Dv_%7By%2Ci%7D-%5Cfrac%7BBvv_y%7D%7Bm%7D%5CDelta%20t-g%5CDelta%20t)  
+- Estimate the landing point of the shell and use it to substitute the last point that would have been below ground:  
+![](http://latex.codecogs.com/gif.latex?%5C%5C%20r%3D-%5Cfrac%7By_n%7D%7By_%7Bn&plus;1%7D%7D%20%5C%5C%20x_l%3D%5Cfrac%7Bx_n&plus;rx_%7Bn&plus;1%7D%7D%7Br&plus;1%7D%20%5C%5C)  
+And the coordinate of the point I estimate is <img src="http://latex.codecogs.com/gif.latex?(x_l,0)" alt="" title="" />  
