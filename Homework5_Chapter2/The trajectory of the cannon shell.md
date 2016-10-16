@@ -42,6 +42,7 @@ And the coordinate of the point I estimate is <img src="http://latex.codecogs.co
 ##Plotting
 
 1. The trajectory of the cannon shell with wind drag:  
+[Here is my code](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(1).py)  
 Initial angle of velocity -> 0.785   
 Initial location of cannon shell -> (0, 0)  
 time step ->  0.01  
@@ -49,6 +50,7 @@ B over m =0.00004 /m
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(1).png)  
 
 2. The trajectory of the cannon shell without wind drag:  
+[Here is my code](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(2).py)  
 Initial angle of velocity -> 0.785  
 Initial location of cannon shell -> (0, 0)  
 time step ->  0.01  
@@ -56,6 +58,7 @@ B over m =0 /m
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(2).png)  
 
 3. The contruction of the trajectorys with and without wind drag:  
+[Here is my code](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(4).py)  
 Initial angle of velocity -> 0.785  
 Initial location of cannon shell -> (0, 0)  
 time step ->  0.01  
@@ -63,11 +66,12 @@ B over m =0.00004 /m
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(4).png)  
 
 4. The trajectory of the cannon shell with wind drag with density correction using adiabatic model:  
-Initial velocity -> 700
-Initial angle of velocity -> 0.785
-Initial location of cannon shell -> (0, 0)
-time step ->  0.001
-a = 0.0065 K/m
-<img src="http://latex.codecogs.com/gif.latex?\alpha=2.5" alt="" title="" />
-<img src="http://latex.codecogs.com/gif.latex?T_0=300" alt="" title="" />
+[Here is my code](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(5).py)  
+Initial velocity -> 700  
+Initial angle of velocity -> 0.785  
+Initial location of cannon shell -> (0, 0)  
+time step ->  0.001  
+a = 0.0065 K/m  
+<img src="http://latex.codecogs.com/gif.latex?\alpha=2.5" alt="" title="" />  
+<img src="http://latex.codecogs.com/gif.latex?T_0=300" alt="" title="" />  
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(5).png)  
