@@ -36,7 +36,7 @@ class flying_cannon:
             x = self.x[-1] + self.v_x[-1] * self.dt
             y = self.y[-1] + self.v_y[-1] * self.dt
             v = math.sqrt(self.v_x[-1] * self.v_x[-1] + self.v_y[-1] * self.v_y[-1]) 
-            c = (1 - 0.0065 * self.y[-1]/273)**(2.5) * self.const[0]
+            c = (1 - 0.0065 * self.y[-1]/300)**(2.5) * self.const[0]
             self.const.append(c)            
             self.x.append(x)
             self.y.append(y)
