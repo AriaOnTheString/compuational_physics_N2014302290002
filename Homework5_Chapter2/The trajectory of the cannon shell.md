@@ -1,8 +1,6 @@
 #The 5th homework of computational physics
 ##Problem:  
-EXERCISES 2.7 (Page 31)  
-EXERCISES 2.9 (Page 31)  
-EXERCISES 2.10 (Page 31)  
+EXERCISES 2.7 (Page 31)   
 ##Abstract  
 In last homework, I have already learned the knowledge of the basics of Euler method and used it to solve a simple problem. Now in this Chapter, more complex Ordinary Differential Equations are coming. Again one will discover the power of the method. I will try to use it to calculate the trajectory of the cannon shell. I will try to do exercise 2.7, 2.9 and 2.10 in this homework.  
 ##Background:  
@@ -54,12 +52,12 @@ B over m =0.00004 /m
 Initial angle of velocity -> 0.785  
 Initial location of cannon shell -> (0, 0)  
 time step ->  0.01  
-B_over_m =0 /m  
+B over m =0 /m  
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(2).png)  
 
 3. The contruction of the trajectorys with and without wind drag:  
 Initial angle of velocity -> 0.785  
 Initial location of cannon shell -> (0, 0)  
 time step ->  0.01  
-B_over_m =0.00004 /m  
+B over m =0.00004 /m  
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(4).png)  
