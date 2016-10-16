@@ -95,4 +95,6 @@ time step ->  0.001
 a = 0.0065 K/m  
 <img src="http://latex.codecogs.com/gif.latex?\alpha=2.5" alt="" title="" />  
 <img src="http://latex.codecogs.com/gif.latex?T_0=300" alt="" title="" />  
-![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(7).png)  
+![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(8).png)  
+
+7. The trajectory consideringthe variation of the ground temperature:  
