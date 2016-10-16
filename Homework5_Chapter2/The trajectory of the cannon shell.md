@@ -31,3 +31,4 @@ Then we can begin our progrem next!
 - Estimate the landing point of the shell and use it to substitute the last point that would have been below ground:  
 ![](http://latex.codecogs.com/gif.latex?%5C%5C%20r%3D-%5Cfrac%7By_n%7D%7By_%7Bn&plus;1%7D%7D%20%5C%5C%20x_l%3D%5Cfrac%7Bx_n&plus;rx_%7Bn&plus;1%7D%7D%7Br&plus;1%7D%20%5C%5C)  
 And the coordinate of the point I estimate is <img src="http://latex.codecogs.com/gif.latex?(x_l,0)" alt="" title="" />  
+- Consider the air drag with density correction:    
