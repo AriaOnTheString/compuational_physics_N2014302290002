@@ -44,10 +44,22 @@ And the coordinate of the point I estimate is <img src="http://latex.codecogs.co
 ##Plotting
 
 1. The trajectory of the cannon shell with wind drag:  
+Initial angle of velocity -> 0.785   
+Initial location of cannon shell -> (0, 0)  
+time step ->  0.01  
+B over m =0.00004 /m  
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(1).png)  
 
 2. The trajectory of the cannon shell without wind drag:  
+Initial angle of velocity -> 0.785  
+Initial location of cannon shell -> (0, 0)  
+time step ->  0.01  
+B_over_m =0 /m  
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(2).png)  
 
 3. The contruction of the trajectorys with and without wind drag:  
+Initial angle of velocity -> 0.785  
+Initial location of cannon shell -> (0, 0)  
+time step ->  0.01  
+B_over_m =0.00004 /m  
 ![](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/Problem%202.7(4).png)  
