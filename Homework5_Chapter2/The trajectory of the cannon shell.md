@@ -2,7 +2,7 @@
 ##Problem:  
 EXERCISES 2.7 (Page 31)   
 ##Abstract  
-In last homework, I have already learned the knowledge of the basics of Euler method and used it to solve a simple problem. Now in this Chapter, more complex Ordinary Differential Equations are coming. Again one will discover the power of the method. I will try to use it to calculate the trajectory of the cannon shell. I will try to do exercise 2.7, 2.9 and 2.10 in this homework.  
+In last homework, I have already learned the knowledge of the basics of Euler method and used it to solve a simple problem. Now in this Chapter, more complex Ordinary Differential Equations are coming. Again one will discover the power of the method. I will try to use it to calculate the trajectory of the cannon shell. I will try to do exercise 2.7 in this homework.  
 ##Background:  
 To solve the ordinary differential equations, Euler method will be used.  
 
