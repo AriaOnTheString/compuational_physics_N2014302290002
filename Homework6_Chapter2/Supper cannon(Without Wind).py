@@ -38,12 +38,12 @@ class super_cannon(object) :
         test_angle = [0*1*3.1415926/180]
         for i in range(85):
             test_angle.append((90-i)*1*math.pi/180)
-            d.append(self.calculate(test_angle[-1], 10000, 4*10**(-5), -1, 300))
+            d.append(self.calculate(test_angle[-1], 6000, 4*10**(-5), -1, 300))
             if d[-1]-d[-2] <= 0 : 
                 break
         pl.xlabel('Horizon Distance x ($m$)')        
         pl.ylabel('Vertical Distance y ($m$)')
-        pl.text(3000000,1500000,'Without Wind')
+        pl.text(1000000,600000,'Without Wind')
         pl.title('The process of finding the proper initial angle')
         pl.show()
         print(test_angle[-2]*180/3.1415926)
@@ -52,7 +52,7 @@ class super_cannon(object) :
         x = [0]
         test_velocity = [500]
         copy=self.scan_angle()
-        for i in range(9500):
+        for i in range(5500):
             test_velocity.append(500+i)
             x.append(self.calculate(copy, test_velocity[-1], 4*10**(-5), -1, 300))
             if x[-1]-self.aimx >=0 :
