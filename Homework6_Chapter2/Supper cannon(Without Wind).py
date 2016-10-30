@@ -1,80 +1,148 @@
 import pylab as pl
 import math
-class super_cannon(object) : 
-    def __init__(self, aim_x=float(input('coordinate x :')), aim_y=float(input('coordinate y :')),  time_step = 0.01):        
-        self.t = [0]
-        self.dt = time_step
-        self.g = 9.8 
-        self.aimx=aim_x
-        self.aimy=aim_y
-    def calculate(self, angle , velocity,  B_2_over_m, choice_of_correction, T0):
-        self.x = [0]
-        self.y = [0]
-        self.B2overm = B_2_over_m
-        self.vdefault=float(velocity)
-        self.adefault=float(angle)
-        self.v_x = [self.vdefault * math.cos(self.adefault)]
-        self.v_y = [self.vdefault * math.sin(self.adefault)]
-        self.v = [velocity]
-        y0,a,alpha=10**4,6.5*10**(-3),2.5
-        if choice_of_correction < 0:            #negative for isothermal approximation
-           def rho(height) :
-               return math.exp(-height/y0)
-        else:                   #non-negative for adiabatic approximation
-           def rho(height):
-               return (1- a * height / T0) ** alpha
-        while self.y[-1] >= self.aimy or self.v_y[-1] >=0 :
-              a_x3, a_y3=-self.B2overm* rho(self.y[-1]) *self.v[-1]*self.v_x[-1] , -9.8-self.B2overm* rho(self.y[-1]) *self.v[-1]*self.v_y[-1]
-              self.x.append(self.x[-1]+self.v_x[-1]*self.dt)
-              self.v_x.append(self.v_x[-1]+a_x3*self.dt)
-              self.y.append(self.y[-1]+self.v_y[-1]*self.dt)
-              self.v_y.append(self.v_y[-1]+a_y3*self.dt)
-              self.t.append(self.t[-1]+self.dt)
-              self.v.append((self.v_x[-1]**2+self.v_y[-1]**2)**0.5)
-        pl.plot(self.x, self.y, label='The trajectory of the cannon')
-        return self.x[-1]
-    def scan_angle(self):
-        d = [0]        
-        test_angle = [0*1*3.1415926/180]
-        for i in range(85):
-            test_angle.append((90-i)*1*math.pi/180)
-            d.append(self.calculate(test_angle[-1], 6000, 4*10**(-5), -1, 300))
-            if d[-1]-d[-2] <= 0 : 
-                break
-        pl.xlabel('Horizon Distance x ($m$)')        
-        pl.ylabel('Vertical Distance y ($m$)')
-        pl.text(1000000,600000,'Without Wind')
-        pl.title('The process of finding the proper initial angle')
-        pl.show()
-        print(test_angle[-2]*180/3.1415926)
-        return test_angle[-2]
-    def scan_velocity(self): 
-        x = [0]
-        test_velocity = [500]
-        copy=self.scan_angle()
-        for i in range(5500):
-            test_velocity.append(500+i)
-            x.append(self.calculate(copy, test_velocity[-1], 4*10**(-5), -1, 300))
-            if x[-1]-self.aimx >=0 :
-                break
-        pl.xlabel('Horizon Distance x ($m$)')
-        pl.ylabel('Vertical Distance y ($m$)')
-        pl.text(95000,5000,'Without Wind')        
-        pl.title('The process of finding the proper initial velocity')
-        pl.show()        
-        print(test_velocity[-2])
-        return test_velocity[-2]
-    def plotting(self): 
-        pl.plot(self.x, self.y, label='The trajectory of the cannon(300K)')
-        pl.xlim(0.0,)
-        pl.ylim(0.0,)
-        pl.xlabel('Horizon Distance x ($m$)')
-        pl.ylabel('Vertical Distance y ($m$)')
-        pl.legend(loc='best', shadow=True)
-        pl.show()
+
+class pendulums(): 
+    def __init__(self,  length, time_step=0.001):        
+        self.l=length
+        self.dt=time_step
+        self.t=[0]
+    def calculation(self,  friction,initial_angle, initial_speed,magnitude_of_force, frequency_of_forth, total_time):
+        self.angle=[initial_angle]
+        self.q=friction
+        self.FD=magnitude_of_force
+        self.omegaD=frequency_of_forth
+        self.T=total_time
+        self.omega=[initial_speed]
+        while self.t[-1] <= self.T: 
+            self.omega.append(self.omega[-1]-9.8*math.sin(self.angle[-1])*self.dt/self.l-self.q*self.omega[-1]*self.dt+self.FD*math.sin(self.omegaD*self.t[-1])*self.dt) 
+            self.angle.append(self.angle[-1]+self.omega[-1]*self.dt)
+            self.t.append(self.t[-1]+self.dt)
+        return [self.t[-1],self.angle[-1]]
         
-a=super_cannon()
-t=a.scan_angle()
-v=a.scan_velocity()
-a.calculate(t,v,4*10**(-5), -1, 300)
-a.plotting()
+    def plotting(self, discription): 
+        pl.plot(self.t,self.angle, label= discription)                   
+        pl.xlabel('Time ($s$)')
+        pl.ylabel('Angle ($rad$)')
+        pl.legend(loc='best')
+    def plottingv(self, discription): 
+        pl.plot(self.t, self.omega, label= discription)
+        pl.xlabel('Time ($s$)')
+        pl.ylabel('Angular velocity ($rad/s$)')
+    def adjust(self):
+        self.adjust = []
+        for i in range(len(self.angle)):
+            if self.angle[i] > math.pi:
+                a = self.angle[i] - 2*math.pi
+            if self.angle[i] < -math.pi:
+                a = self.angle[i] + 2*math.pi
+            if self.angle[i] <= math.pi and self.angle[i] >= -math.pi:
+                a = self.angle[i]
+            self.adjust.append(a)
+a=pendulums(9.8)
+a.calculation(0.5,0.0000,0,1.2,2/3,150)
+a.plotting('Initial angle = 0.0000rad')
+b=pendulums(9.8)
+b.calculation(0.5,0.0001,0,1.2,2/3,150)
+b.plotting('Initial angle = 0.0001rad')
+pl.show()
+
+delta=[]
+for i in range(len(a.angle)):
+    delta.append(math.log((abs(a.angle[i]-b.angle[i])),math.e))
+pl.plot(a.t,delta, label='Difference of angles')
+pl.xlabel('Time ($s$)')
+pl.ylabel('Angle ($1e^y rad$)')
+pl.legend(loc='best')
+pl.show()
+
+pl.subplot(3,2,1)#
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,0,2/3,60)
+a.plotting('Forced pendulum')
+pl.text(40,0.15,r'$F_D=0$')
+pl.title(r'Fig1.1 $\theta$ versus time with different $F_D$')
+pl.xlim(0,)
+pl.subplot(3,2,3)#
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,0.5,2/3,60)
+a.plotting('')
+pl.text(40,0.5,r'$F_D=0.5$')
+pl.xlim(0,)
+pl.ylabel(r'$\theta$(radius)',fontsize=15)
+pl.subplot(3,2,5)#
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,1.2,2/3,60)
+a.plotting('Forced pendulum')
+pl.text(40,-2,r'$F_D=1.2$')
+pl.xlim(0,)
+pl.xlabel('time(seconds)',fontsize=15)
+pl.subplot(3,2,2)#
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,0,2/3,60)
+a.plottingv('Forced pendulum')
+pl.text(40,0.05,r'$F_D=0$')
+pl.title(r'Fig.1.2 $\omega$ versus time with different $F_D$')
+pl.xlim(0,)
+pl.subplot(3,2,4)#
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,0.5,2/3,60)
+a.plottingv('Forced pendulum')
+pl.text(40,0.5,r'$F_D=0.5$')
+pl.xlim(0,)
+pl.ylabel(r'$\omega$(radius/second)',fontsize=15)
+pl.subplot(3,2,6)#
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,1.2,2/3,60)
+a.plottingv('Forced pendulum')
+pl.text(40,1.0,r'$F_D=1.2$')
+pl.xlim(0,)
+pl.xlabel('time(seconds)',fontsize=15)
+pl.show()
+
+pl.subplot(2,1,1)
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,1.2,2/3,60)
+a.adjust()
+pl.plot(a.t, a.adjust, label='Forced pendulum')
+pl.text(30,1.0,'adjusted'+'\n$F_D=1.2$')
+pl.title(r'Fig.1.3 $\theta$ versus time')
+pl.xlim(0,)
+pl.ylabel(r'$\theta$(radius)',fontsize=15)
+pl.subplot(2,1,2)
+a=pendulums(9.8)
+a.calculation(0.5,0.2,0,1.2,2/3,60)
+a.plotting('Forced pendulum')
+pl.text(40,-2,'unadjusted'+'\n$F_D=1.2$')
+pl.xlim(0,)
+pl.xlabel('time(seconds)',fontsize=15)
+pl.ylabel(r'$\theta$(radius)',fontsize=15)
+pl.show()
+
+a=pendulums(9.8)
+a.calculation(0.5,0.0000,0,1.2,2/3,150)
+a.plotting('Damping factor = 0.5')
+b=pendulums(9.8)
+b.calculation(0.51,0.0000,0,1.2,2/3,150)
+b.plotting('Damping factor = 0.51')
+c=pendulums(9.8)
+c.calculation(0.49,0.0000,0,1.2,2/3,150)
+c.plotting('Damping factor = 0.49')
+pl.show()
+
+delta1=[]
+for i in range(len(a.angle)):
+    delta1.append(a.angle[i]-b.angle[i])
+pl.plot(a.t,delta1, label='Difference of angles of $q=0.5$ and $q=0.51$')
+pl.xlabel('Time ($s$)')
+pl.ylabel('Angle ($rad$)')
+pl.legend(loc='best')
+pl.show()
+
+delta2=[]
+for i in range(len(a.angle)):
+    delta2.append(a.angle[i]-c.angle[i])
+pl.plot(a.t,delta2, label='Difference of angles of $q=0.5$ and $q=0.49$')
+pl.xlabel('Time ($s$)')
+pl.ylabel('Angle ($rad$)')
+pl.legend(loc='best')
+pl.show()
