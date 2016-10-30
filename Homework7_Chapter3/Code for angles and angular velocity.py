@@ -117,3 +117,32 @@ pl.xlim(0,)
 pl.xlabel('time(seconds)',fontsize=15)
 pl.ylabel(r'$\theta$(radius)',fontsize=15)
 pl.show()
+
+a=pendulums(9.8)
+a.calculation(0.5,0.0000,0,1.2,2/3,150)
+a.plotting('Damping factor = 0.5')
+b=pendulums(9.8)
+b.calculation(0.51,0.0000,0,1.2,2/3,150)
+b.plotting('Damping factor = 0.51')
+c=pendulums(9.8)
+c.calculation(0.49,0.0000,0,1.2,2/3,150)
+c.plotting('Damping factor = 0.49')
+pl.show()
+
+delta1=[]
+for i in range(len(a.angle)):
+    delta1.append(a.angle[i]-b.angle[i])
+pl.plot(a.t,delta1, label='Difference of angles of $q=0.5$ and $q=0.51$')
+pl.xlabel('Time ($s$)')
+pl.ylabel('Angle ($rad$)')
+pl.legend(loc='best')
+pl.show()
+
+delta2=[]
+for i in range(len(a.angle)):
+    delta2.append(a.angle[i]-c.angle[i])
+pl.plot(a.t,delta2, label='Difference of angles of $q=0.5$ and $q=0.49$')
+pl.xlabel('Time ($s$)')
+pl.ylabel('Angle ($rad$)')
+pl.legend(loc='best')
+pl.show()
