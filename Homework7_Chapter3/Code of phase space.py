@@ -2,7 +2,7 @@ import pylab as pl
 import math
 
 class pendulums(): 
-    def __init__(self,  length, time_step=0.001):        
+    def __init__(self,  length, time_step):        
         self.l=length
         self.dt=time_step
         self.t=[0]
@@ -37,11 +37,11 @@ class pendulums():
         pl.ylabel('Angular velocity ($rad/s$)')
        
 pl.subplot(2,2,1)
-a=pendulums(9.8)
-a.calculation(0.5,0.2,0,1.2,2/3,5000)
+a=pendulums(9.8, 3*math.pi/1000)
+a.calculation(0.5,0.2,0,1.2,2/3, 3*math.pi*10000)
 showangle=[]
 showomega=[]
-for i in range(len(a.t)):
+for i in range(1,len(a.t)):
         if ((2/3)*(a.t[i]))%(2*(math.pi))<0.001 :
             showangle.append(a.angle[i])
             showomega.append(a.omega[i])
@@ -51,12 +51,12 @@ pl.ylabel('Angular ($rad/s$)')
 pl.legend(loc='best')
 
 pl.subplot(2,2,2)
-a=pendulums(9.8)
-a.calculation(0.5,0.2,0,1.2,2/3,5000)
+a=pendulums(9.8, 3*math.pi/1000)
+a.calculation(0.5,0.2,0,1.2,2/3,3*math.pi*10000)
 showangle=[]
 showomega=[]
-for i in range(len(a.t)):
-        if ((2/3)*(a.t[i]))%(2*(math.pi)-math.pi/4)<0.001 :
+for i in range(1,len(a.t)):
+        if ((2/3)*(a.t[i])-math.pi/4)%(2*(math.pi))<0.001 :
             showangle.append(a.angle[i])
             showomega.append(a.omega[i])
 pl.plot(showangle, showomega,'.',label='$2/3t=2\pi n+\pi/4$')
@@ -65,12 +65,12 @@ pl.ylabel('Angular ($rad/s$)')
 pl.legend(loc='best')
 
 pl.subplot(2,2,3)
-a=pendulums(9.8)
-a.calculation(0.5,0.2,0,1.2,2/3,5000)
+a=pendulums(9.8, 3*math.pi/1000)
+a.calculation(0.5,0.2,0,1.2,2/3,3*math.pi*10000)
 showangle=[]
 showomega=[]
-for i in range(len(a.t)):
-        if ((2/3)*(a.t[i]))%(2*(math.pi)-math.pi/2)<0.001 :
+for i in range(1,len(a.t)):
+        if ((2/3)*(a.t[i])-math.pi/2)%(2*(math.pi))<0.001 :
             showangle.append(a.angle[i])
             showomega.append(a.omega[i])
 pl.plot(showangle, showomega,'.',label='$2/3t=2\pi n+\pi/2$')
@@ -79,12 +79,12 @@ pl.ylabel('Angular ($rad/s$)')
 pl.legend(loc='best')
 
 pl.subplot(2,2,4)
-a=pendulums(9.8)
-a.calculation(0.5,0.2,0,1.2,2/3,5000)
+a=pendulums(9.8, 3*math.pi/1000)
+a.calculation(0.5,0.2,0,1.2,2/3,3*math.pi*10000)
 showangle=[]
 showomega=[]
-for i in range(len(a.t)):
-        if ((2/3)*(a.t[i]))%(2*(math.pi)-3*math.pi/4)<0.001 :
+for i in range(1,len(a.t)):
+        if ((2/3)*(a.t[i])-3*math.pi/4)%(2*(math.pi))<0.001 :
             showangle.append(a.angle[i])
             showomega.append(a.omega[i])
 pl.plot(showangle, showomega,'.',label='$2/3t=2\pi n+3\pi/4$')
