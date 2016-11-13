@@ -11,6 +11,6 @@
 - [x] [Exercise_5: Problem 2.7 in Chapter 2](https://github.com/AriaOnTheString/compuational_physics_N2014302290002/blob/master/Homework5_Chapter2/The%20trajectory%20of%20the%20cannon%20shell.md)
 - [x] [Exercise_6: Problem 2.10 L1 & L2](http://www.jianshu.com/p/867f7fcd950c)
 - [x] [Exercise_7: Problem 3.12, 3.13 & 3.14](http://www.jianshu.com/p/143183381e01)
-- [ ] [Exercise_8]()
+- [x] [Exercise_8: Problem 3.18, 3.19, 3.20](http://www.jianshu.com/p/93ff7508a3ab)
 - [ ] [Exercise_9]()
 - [ ] [Exercise_10]()
