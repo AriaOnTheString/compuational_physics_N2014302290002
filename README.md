@@ -13,4 +13,4 @@
 - [x] [Exercise_7: Problem 3.12, 3.13 & 3.14](http://www.jianshu.com/p/143183381e01)
 - [x] [Exercise_8: Problem 3.18, 3.19, 3.20](http://www.jianshu.com/p/93ff7508a3ab)
 - [x] [Exercise_9: Problem 3.30, 3.31](http://www.jianshu.com/p/ada6c7eb3520)
-- [ ] [Exercise_10]()
+- [x] [Exercise_10: Problem 4.9, 4.10, 4.11](http://www.jianshu.com/p/8335d1793905)
