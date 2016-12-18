@@ -16,3 +16,4 @@
 - [x] [Exercise_10: Problem 4.9, 4.10, 4.11](http://www.jianshu.com/p/8335d1793905)
 - [x] [Exercise_11: Problem 4.19, 4.20](http://www.jianshu.com/p/3b377183dec2)
 - [x] [Exercise_12: Problem 5.1, 5.4, 5.6, 5.7](http://www.jianshu.com/p/96b1b6e17ca0)
+- [x] [Exercise_13: Problem 6.12, 6.16](http://www.jianshu.com/p/170f29debb0a)
